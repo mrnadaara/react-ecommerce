@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 import './sign-in.styles.scss';
 import FormInput from '../form-input/form-input.component';
@@ -55,9 +56,14 @@ class SignIn extends React.Component {
             required
           />
 
-          <CustomButton type='submit'>
-            Sign In
-          </CustomButton>
+          <div className='buttons'>
+            <CustomButton type='submit'>
+              Sign In
+            </CustomButton>
+            <CustomButton isGoogleSignIn={true} onClick={signInWithGoogle}>
+              Sign In With Google
+            </CustomButton>
+          </div>
         </form>
       </div>
     );
